@@ -16,6 +16,14 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Form Login</h1>
                                     </div>
+
+                                    <!-- Pesan error jika login gagal -->
+                                    <?php if ($this->session->flashdata('error')) : ?>
+                                        <div class="alert alert-danger">
+                                            <?= $this->session->flashdata('error'); ?>
+                                        </div>
+                                    <?php endif; ?>
+
                                     <?php echo $this->session->flashdata('pesan') ?>
                                     <form method="post" action="<?php echo base_url('auth/login') ?>" class="user">
                                         <div class="form-group">
